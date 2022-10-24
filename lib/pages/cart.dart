@@ -21,24 +21,27 @@ class Cart extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                padding: EdgeInsets.all(10),
-                margin: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
-                  border: Border.all(width: 1,),
-                ),
-                child: Image.asset(
+               Image.asset(
                   'assets/modelo.png',
                   width: 42,
                   height: 90,
                   fit: BoxFit.fill,
                 ),
-              ),
                //const Text('Jason'),
-               IconButton(onPressed: () {ref.read(valueStateProvider.notifier).state--;}, icon: const Icon(Icons.remove)),
-               Text('$value'),
-               IconButton(onPressed: () {ref.read(valueStateProvider.notifier).state++;}, icon: const Icon(Icons.add)),
+               Column(
+                 children: [
+                   RichText(text: const TextSpan(text: "Modelo \$7.99", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)), textScaleFactor: 2,),
+                   const SizedBox(height: 10,),
+                   Row(
+                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                     children: [
+                       IconButton(onPressed: () {ref.read(valueStateProvider.notifier).state--;}, icon: const Icon(Icons.remove)),
+                       Text('$value'),
+                       IconButton(onPressed: () {ref.read(valueStateProvider.notifier).state++;}, icon: const Icon(Icons.add)),
+                     ],
+                   ),
+                 ],
+               ),
                ],
             ),
         ],
