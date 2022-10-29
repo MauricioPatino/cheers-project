@@ -34,6 +34,8 @@ dependencies:
   isar: ^3.0.2
   isar_flutter_libs: 3.0.2 # contains Isar Core
   multi_select_flutter: ^4.1.2
+  hooks_riverpod: ^2.0.2
+  uuid: ^3.0.6
 
 dev_dependencies:
   flutter_test:

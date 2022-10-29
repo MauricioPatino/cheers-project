@@ -4,15 +4,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../main.dart';
 
 
-class Cart extends ConsumerWidget {
-  const Cart({Key? key}) : super(key: key);
+class Checkout extends ConsumerWidget {
+  const Checkout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final value = ref.watch(valueStateProvider);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shopping Cart'),
+        title: const Text('Checkout'),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -21,22 +21,22 @@ class Cart extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-               Image.asset(
-                  'assets/modelo.png',
-                  width: 42,
-                  height: 90,
-                  fit: BoxFit.fill,
-                ),
-               //const Text('Jason'),
-               Column(
-                 children: [
-                   RichText(text: const TextSpan(text: "Modelo", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)), textScaleFactor: 2,),
-                   const SizedBox(height: 10,),
-                   RichText(text: const TextSpan(text: "\$7.99", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)), textScaleFactor: 2,),
-                 ],
-               ),
-               ],
-            ),
+              Image.asset(
+                'assets/modelo.png',
+                width: 42,
+                height: 90,
+                fit: BoxFit.fill,
+              ),
+              //const Text('Jason'),
+              Column(
+                children: [
+                  RichText(text: const TextSpan(text: "Modelo", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)), textScaleFactor: 2,),
+                  const SizedBox(height: 10,),
+                  RichText(text: const TextSpan(text: "\$7.99", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)), textScaleFactor: 2,),
+                ],
+              ),
+            ],
+          ),
           SizedBox(height: 20,),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,

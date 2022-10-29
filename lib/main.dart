@@ -1,5 +1,7 @@
 import 'package:cheers/customer_modal.dart';
 import 'package:cheers/pages/cart.dart';
+import 'package:cheers/pages/checkout.dart';
+import 'package:cheers/pages/contacts.dart';
 import 'package:cheers/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      home: MyHomePage(),
+      home:  MyHomePage(),
     );
   }
 }
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
 final valueStateProvider = StateProvider<int>((ref) => 0);
 
 class MyHomePage extends ConsumerWidget {
-  MyHomePage({Key? key}) : super(key: key);
+   MyHomePage({Key? key}) : super(key: key);
   //final service = IsarService();
 
   @override
@@ -42,10 +44,12 @@ class MyHomePage extends ConsumerWidget {
 
     final value = ref.watch(valueStateProvider);
 
+
+
     return Scaffold(
       appBar: AppBar(title: const Text('Select your beer'), backgroundColor: Colors.orangeAccent, actions:  [
         IconButton(
-          onPressed: () {},
+          onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const Contacts()));},
           icon: const Icon(Icons.person_add_alt_1),
         )
       ]),
@@ -204,7 +208,7 @@ class MyHomePage extends ConsumerWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(30.0),
             child: ElevatedButton(
-              onPressed: () {
+              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => const Checkout()));
                 // showModalBottomSheet(
                 //     context: context,
                 //     builder: (context) {
