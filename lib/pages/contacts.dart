@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:uuid/uuid.dart';
-
+import 'package:cheers/isar_service.dart';
 import '../main.dart';
 
 @immutable

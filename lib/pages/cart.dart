@@ -1,6 +1,9 @@
+import 'package:cheers/pages/contacts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:cheers/isar_service.dart';
 
+import '../entities/beers.dart';
 import '../main.dart';
 
 
@@ -47,6 +50,17 @@ class Cart extends ConsumerWidget {
               IconButton(onPressed: () {ref.read(valueStateProvider.notifier).state++;}, icon: const Icon(Icons.add)),
             ],
           ),
+          Expanded(
+            child: Align(
+              alignment: FractionalOffset.bottomCenter,
+              child: ElevatedButton(onPressed: (){
+                  // var submittedData = ['Modelo'];
+                  // IsarService.addBeer(Beers(''));
+              }
+              , child: const Text('Add to Order')),
+            ),
+          ),
+          //Divider(),
         ],
       ),
     );

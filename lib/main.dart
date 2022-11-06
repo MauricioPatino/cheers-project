@@ -37,13 +37,12 @@ final valueStateProvider = StateProvider<int>((ref) => 0);
 
 class MyHomePage extends ConsumerWidget {
    MyHomePage({Key? key}) : super(key: key);
-  //final service = IsarService();
+  final isarService = IsarService();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
 
     final value = ref.watch(valueStateProvider);
-
 
 
     return Scaffold(
@@ -86,6 +85,31 @@ class MyHomePage extends ConsumerWidget {
                           children: const [
                             CustomText(text: "Modelo", size: 15, color: Colors.black, weight: FontWeight.bold),
                             CustomText(text: "\$7.99", size: 15, color: Colors.black, weight: FontWeight.bold),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const Cart()));
+                    },
+                    style: ElevatedButton.styleFrom(primary: Colors.white),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Image.asset(
+                          'assets/corona.png',
+                          width: 42,
+                          height: 90,
+                          fit: BoxFit.fill,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: const [
+                            CustomText(text: "Corona", size: 15, color: Colors.black, weight: FontWeight.bold),
+                            CustomText(text: "\$8.99", size: 15, color: Colors.black, weight: FontWeight.bold),
                           ],
                         ),
                       ],
