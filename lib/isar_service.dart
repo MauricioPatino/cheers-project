@@ -1,3 +1,4 @@
+import 'package:cheers/pages/cart.dart';
 import 'package:isar/isar.dart';
 import 'package:cheers/entities/beers.dart';
 import 'package:cheers/entities/customer.dart';
@@ -8,6 +9,11 @@ class IsarService {
   IsarService() {
     db = openDB();
   }
+
+  // Future<int> addThis(Beers newBeer) async{
+  //   final isar = await db;
+  //   return isar.writeTxnSync<int>(() => isar.beers.putSync(test));
+  // }
 
   Future <void> addPerson(Customer customer) async{
     final isar = await db;
@@ -38,6 +44,9 @@ class IsarService {
     await isar.writeTxn(() => isar.clear());
   }
 
+//   await isar.writeTxn(() async {
+//   await isar.Beers.put(beers);
+// })
 
 
 
@@ -51,7 +60,7 @@ class IsarService {
 
   static Future<Isar> openDB() async {
     if(Isar.instanceNames.isEmpty){
-      return await Isar.open([BeersSchema], inspector: true,);
+      return await Isar.open([BeersSchema, CustomerSchema], inspector: true,);
     }
     //final isar = await Isar.open([BeersSchema]);
     return await Future.value(Isar.getInstance());

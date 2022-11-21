@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../main.dart';
+import 'home_page.dart';
 
 
 class Checkout extends ConsumerWidget {
